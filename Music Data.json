@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Abcha Din Abcha Rat",
+        "artist": "Rupak Tiary | Jakir  Aditya",
+        "genre": "",
+        "image": "image/img1.jpg",
+        "audio": "audio/Abcha Din Abcha Rat.mp3"
+    },
+    {
+        "title": "Bondhu Tomay",
+        "artist": "Rishi Panda | Chandrabindu",
+        "genre": "",
+        "image": "image/img2.jpg",
+        "audio": "audio/Bondhu Tomay.mp3"
+    },
+    {
+        "title": "Hridoyer Rong",
+        "artist": "Anupam Roy | Lagnajita",
+        "genre": "",
+        "image": "image/img3.jpg",
+        "audio": "audio/Hridoyer Rong.mp3"
+    },
+    {
+        "title": "Kichchu Chaini Aami",
+        "artist": "Rishi Panda",
+        "genre": "",
+        "image": "image/img4.jpg",
+        "audio": "audio/Kichchu Chaini Aami.mp3"
+    },
+    {
+        "title": "O Bandhobi",
+        "artist": "Rupak Tiary | Jayanta Roy",
+        "genre": "",
+        "image": "image/img5.jpg",
+        "audio": "audio/O Bandhobi.mp3"
+    },
+    {
+        "title": "Prem Jeno Purno Holo",
+        "artist": "Rupak Tiary | Trishna | Aditya Paul",
+        "genre": "",
+        "image": "image/img6.jpg",
+        "audio": "audio/Prem Jeno Purno Holo.mp3"
+    },
+    {
+        "title": "Preme pora baron",
+        "artist": "Rishi Panda",
+        "genre": "",
+        "image": "image/img7.jpg",
+        "audio": "audio/Preme pora baron.mp3"
+    },
+    {
+        "title": "Shei Tumi",
+        "artist": "Arko",
+        "genre": "",
+        "image": "image/img8.jpg",
+        "audio": "audio/Shei Tumi.mp3"
+    },
+    {
+        "title": "Shona diya bandhayachi ghor",
+        "artist": "Rishi Panda",
+        "genre": "",
+        "image": "image/img9.jpg",
+        "audio": "audio/Shona diya bandhayachi ghor.mp3"
+    },
+    {
+        "title": "Shondhe Namar Aagey",
+        "artist": "Ishan Mitra",
+        "genre": "",
+        "image": "image/img10.jpg",
+        "audio": "audio/Shondhe Namar Aagey.mp3"
+    }
+]
