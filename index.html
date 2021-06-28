@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Music App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            /* user-zoom: none; */
+        }
+        body{
+            background: #f1f3ff;
+            font-family: 'Varela Round', sans-serif;
+        }
+        .container{
+            max-width: 450px;
+            /* margin: 10px auto; */
+            margin: 0px auto;
+            /* padding: 10px; */
+            display: flex;
+            flex-direction: column;
+            background: #dcdddf;
+            border-radius: 12px;
+            /* border: 1px solid #000; */
+            /* height: calc(100vh - 20px); */
+            height: 100vh;
+        }
+        .container .header{
+            display: flex;
+            justify-content: space-between;
+            /* background: #f8f; */
+            padding: 20px 20px;
+        }
+        .container .header svg{
+            width: 24px;
+            height: 24px;
+            fill: #34353c;
+        }
+
+
+        .container .middle{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8vh;
+        }
+        .container .middle .img{
+            background: #b7bbc7;
+            width: 200px;
+            height: 200px;
+            /* padding: 20px; */
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .container .middle .img svg{
+            width: 120px;
+            height: 120px;
+            fill: #353535;
+            fill: #3a3c46;
+        } */
+        .container .middle .img img{
+            width: 100%;
+            border-radius: 8px;
+        }
+        .container .middle .txt{
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-transform: capitalize;
+        }
+        .container .middle .txt h2{
+            color: #252525;
+        }
+        .container .middle .txt h3{
+            color: #656565;
+        }
+
+        .container .footer{
+            margin-top: auto;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        .footer .time-bar{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+            width: 80%;
+        }
+        .time-bar .prog_bar{
+            /* margin: 0 auto; */
+            /* margin-top: 64px; */
+            height: 6px;
+            /* width: 80%; */
+            background: #858585;
+            border-radius: 6px;
+            position: relative;
+        }
+        .time-bar .prog_bar span{
+            position: relative;
+            height: 6px;
+            width: 0%;
+            border-radius: 6px;
+            background: #151515;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .time-bar .prog_bar span::before{
+            content: '';
+            position: absolute;
+            right: -6px;
+            /* left: calc(20% - 6px); */
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+        }
+        .time-bar .timer{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container .footer .controls{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container .footer svg{
+            width: 32px;
+            height: 32px;
+            fill: #34353c;
+        }
+        .container .footer .play_pause svg{
+            width: 48px;
+            height: 48px;
+            margin: 0 48px;
+        }
+
+        .container .footer .play_pause .extra{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="down"> 
+                <svg viewBox="0 0 448 512">
+                    <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/>
+                </svg>
+            </div>
+
+            <div class="dots">
+                <svg viewBox="0 0 192 512">
+                    <path d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="img">
+                <!-- <svg viewBox="0 0 512 512">
+                    <path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"/>
+                </svg> -->
+
+                <img src="" alt="">
+            </div>
+
+            <div class="txt">
+                <h2>Abcha Din Abcha Rat</h2>
+                <h3>Rupak Tiary | Jakir  Aditya</h3>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="time-bar">
+                <div class="prog_bar">
+                    <span></span>
+                </div>
+                <div class="timer">
+                    <div class="currentT">00:00</div>
+                    <div class="duration">04:34</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="prev">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M11.5 280.6l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2zm256 0l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2z"/>
+                    </svg>
+                </div>
+
+                <div class="play_pause">
+                    <svg><use href="#play" class="play"></use></svg>
+
+                    <svg class="extra">
+                        <symbol id="play" viewBox="0 0 512 512">
+                            <path d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"/>
+                        </symbol>
+                    </svg>
+
+                    <svg class="extra">
+                        <symbol id="pause" viewBox="0 0 512 512">
+                            <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16zm-112 0v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16z"/>
+                        </symbol>
+                    </svg>
+                </div>
+
+                <div class="next"> 
+                    <svg viewBox="0 0 512 512">
+                        <path d="M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"/>
+                    </svg>
+                </div>
+
+                <audio class="audio" src=""></audio>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        let image = document.querySelector('.img img');
+        let title = document.querySelector('.txt h2');
+        let artist = document.querySelector('.txt h3');
+        let audio = document.querySelector('.audio');
+
+        let play_pause = document.querySelector('.play_pause');
+        let ppBtn = document.querySelector('.play_pause svg use')
+        let prev = document.querySelector('.prev');
+        let next = document.querySelector('.next');
+
+        let progress = document.querySelector('.prog_bar');
+        let prog_bar = document.querySelector('.prog_bar span');
+        let currentT = document.querySelector('.timer .currentT');
+        let duration = document.querySelector('.timer .duration');
+
+        // Fetch Data From Api
+        fetch('Music Data.json')
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            // console.log(data);
+
+            let num = 0;
+
+            window.addEventListener('load', fetchData(num))
+
+            // fetched data shown
+            function fetchData(num){
+                title.innerText = data[num].title;
+                artist.innerText = data[num].artist;
+                image.src = data[num].image;
+                audio.src = data[num].audio;
+            }
+            
+            // play Pause function
+            play_pause.addEventListener('click', () => {
+                let btn = ppBtn.classList.contains('play');
+                btn ? playMusic() : pauseMusic()
+            });
+
+            // Play Music
+            function playMusic(){
+                ppBtn.classList.remove('play');
+                ppBtn.classList.add('pause');
+                ppBtn.setAttribute('href', '#pause') ;
+                audio.play();
+            }
+
+            // Pause Music
+            function pauseMusic(){
+                ppBtn.classList.remove('pause');
+                ppBtn.classList.add('play');
+                ppBtn.setAttribute('href', '#play') ;
+                audio.pause();
+            }
+
+            // next function
+            next.addEventListener('click', () => {
+                num++;
+                num > (data.length - 1) ? num = 0 : num = num;
+                fetchData(num);
+                playMusic()
+            })
+
+            // prev function
+            prev.addEventListener('click', () => {
+                num--;
+                num < 0 ? num = (data.length - 1) : num = num;
+                fetchData(num)
+                playMusic()
+            })
+
+            // timer function
+            audio.addEventListener('timeupdate', (e) => {
+                let currentT = e.target.currentTime;
+                let duration = e.target.duration;
+
+                // update progress bar
+                let prog_width = (currentT / duration) * 100;
+                prog_bar.style.width = `${prog_width}%`;
+
+
+                // update the timer
+                let currentTM = document.querySelector('.timer .currentT')
+                let durationM = document.querySelector('.timer .duration')
+
+                //  update current time
+                let curMin = Math.floor(currentT / 60);
+                let curSec = Math.floor(currentT % 60);
+
+                if(curMin < 10) {curMin = `0${curMin}`}
+                if(curSec < 10) {curSec = `0${curSec}`}
+
+                currentTM.innerText = `${curMin}:${curSec}`;
+
+
+                // update duration
+                audio.addEventListener('loadeddata', () => {
+                    let audioDuration = audio.duration;
+
+                    let durMin = Math.floor(audioDuration / 60);
+                    let durSec = Math.floor(audioDuration % 60);
+
+                    if(durMin < 10) {durMin = `0${durMin}`}
+                    if(durSec < 10) {durSec = `0${durSec}`}
+
+                    durationM.innerText = `${durMin}:${durSec}`;
+                })
+                
+            })
+
+
+            // prog bar touch function
+            progress.addEventListener('click', (e) => {
+                let progressWidth = progress.clientWidth;
+                let clickOffsetX = e.offsetX;
+                let songDuration = audio.duration;
+
+                audio.currentTime = (clickOffsetX / progressWidth) * songDuration;
+                playMusic();
+            })
+
+
+            
+        })
+        .catch((error) =>{
+            console.error(error);
+        });
+    </script>
+</body>
+</html>
