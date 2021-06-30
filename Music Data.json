@@ -68,5 +68,75 @@
         "genre": "",
         "image": "image/img10.jpg",
         "audio": "audio/Shondhe Namar Aagey.mp3"
+    },
+    {
+        "title": "Takey Olpo Kachhe Dakchhi",
+        "artist": "Rahul Dutta | Prem Tame ",
+        "genre": "",
+        "image": "image/img11.jpg",
+        "audio": "audio/Takey Olpo Kachhe Dakchhi.mp3"
+    },
+    {
+        "title": "Opekkha",
+        "artist": "The Bong Guy",
+        "genre": "",
+        "image": "image/img12.jpg",
+        "audio": "audio/Opekkha.mp3"
+    },
+    {
+        "title": "Tomake",
+        "artist": "Arko",
+        "genre": "",
+        "image": "image/img13.jpg",
+        "audio": "audio/Tomake.mp3"
+    },
+    {
+        "title": "Tomake Na Lekha Chithita",
+        "artist": "Sayiaan | Rupak Tiary | Jakir",
+        "genre": "",
+        "image": "image/img14.jpg",
+        "audio": "audio/Tomake Na Lekha Chithita.mp3"
+    },
+    {
+        "title": "Tomar Kothay",
+        "artist": "Rupak | Jakir",
+        "genre": "",
+        "image": "image/img15.jpg",
+        "audio": "audio/Tomar Kothay.mp3"
+    },
+    {
+        "title": "Tomay Amay Mile",
+        "artist": "Rupak Tiary",
+        "genre": "",
+        "image": "image/img16.jpg",
+        "audio": "audio/Tomay Amay Mile.mp3"
+    },
+    {
+        "title": "Tomay hrid majhare rakhbo",
+        "artist": "Borno Chakroborty",
+        "genre": "",
+        "image": "image/img17.jpg",
+        "audio": "audio/Tomay hrid majhare rakhbo.mp3"
+    },
+    {
+        "title": "Tor Adorer Tane",
+        "artist": "Rupak Tiary | Durba Banerjee",
+        "genre": "",
+        "image": "image/img18.jpg",
+        "audio": "audio/Tor Adorer Tane.mp3"
+    },
+    {
+        "title": "Tor Name Lekha",
+        "artist": "Rupak Tiary",
+        "genre": "",
+        "image": "image/img19.jpg",
+        "audio": "audio/Tor Name Lekha.mp3"
+    },
+    {
+        "title": "Tumi Kothai",
+        "artist": "Anupam Roy | Aziz Zaid",
+        "genre": "",
+        "image": "image/img20.jpg",
+        "audio": "audio/Tumi Kothai.mp3"
     }
 ]
